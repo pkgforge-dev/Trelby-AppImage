@@ -12,6 +12,11 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
+# the app is hardcoded to compile the doc file using /usr/share/sgml/docbook/xsl-stylesheets
+# but on archlinux that is in /usr/share/xml/docbook/xsl-stylesheets-1.79.2-nons
+mkdir -p /usr/share/sgml/docbook
+ln -s /usr/share/xml/docbook/xsl-stylesheets-*-nons /usr/share/sgml/docbook/xsl-stylesheets
+
 # Comment this out if you need an AUR package
 make-aur-package trelby
 

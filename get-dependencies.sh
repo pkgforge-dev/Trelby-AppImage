@@ -17,6 +17,9 @@ get-debloated-pkgs --add-common --prefer-nano
 mkdir -p /usr/share/sgml/docbook
 ln -s /usr/share/xml/docbook/xsl-stylesheets-*-nons /usr/share/sgml/docbook/xsl-stylesheets
 
+# the aur package disabled building the doc and manpage due to the above issue lol
+export PRE_BUILD_CMDS="sed -i -e 's|-C doc manpage||' ./PKGBUILD"
+
 # Comment this out if you need an AUR package
 make-aur-package trelby
 

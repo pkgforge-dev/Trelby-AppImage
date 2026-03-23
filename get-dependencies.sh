@@ -14,8 +14,8 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # the app is hardcoded to compile the doc file using /usr/share/sgml/docbook/xsl-stylesheets
 # but on archlinux that is in /usr/share/xml/docbook/xsl-stylesheets-1.79.2-nons
-mkdir -p /usr/share/sgml/docbook
-ln -s /usr/share/xml/docbook/xsl-stylesheets-*-nons /usr/share/sgml/docbook/xsl-stylesheets
+mkdir -p /usr/share/sgml
+ln -s /usr/share/xml/docbook /usr/share/sgml
 
 # the aur package disabled building the doc and manpage due to the above issue lol
 export PRE_BUILD_CMDS="sed -i -e 's|-C doc manpage||' ./PKGBUILD"

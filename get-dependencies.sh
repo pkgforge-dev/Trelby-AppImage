@@ -12,8 +12,8 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
-# the app is hardcoded to compile the doc file using /usr/share/sgml/docbook/xsl-stylesheets
-# but on archlinux that is in /usr/share/xml/docbook/xsl-stylesheets-1.79.2-nons
+# the app is hardcoded to compile the doc file using /usr/share/sgml/docbook
+# but on archlinux that is in /usr/share/xml/docbook
 mkdir -p /usr/share/sgml
 ln -s /usr/share/xml/docbook /usr/share/sgml
 
